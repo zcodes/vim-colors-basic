@@ -11,7 +11,7 @@
 
 " default gui colors
 let s:foreground = "263238"
-let s:background = "ffffff"
+let s:background = "efefef"
 let s:selection = "e3fc8d"
 let s:line = "efefef"
 let s:comment = "7c7c7c"
@@ -287,6 +287,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Type", s:blue, "", "none")
     call <SID>X("Define", s:purple, "", "none")
     call <SID>X("Include", s:blue, "", "")
+    call <SID>X("Number", s:orange, "", "")
     "call <SID>X("Ignore", "666666", "", "")
 
     " Vim Highlighting
@@ -319,12 +320,22 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("rubyRepeat", s:purple, "", "")
 
     " Python Highlighting
-    call <SID>X("pythonInclude", s:orange, "", "italic")
-    call <SID>X("pythonStatement", s:orange, "", "italic")
+    call <SID>X("pythonInclude", s:red, "", "")
+    call <SID>X("pythonStatement", s:aqua, "", "")
     call <SID>X("pythonConditional", s:blue, "", "")
     call <SID>X("pythonRepeat", s:blue, "", "")
-    call <SID>X("pythonException", s:red, "", "")
-    call <SID>X("pythonFunction", s:aqua, "", "italic")
+    call <SID>X("pythonException", s:blue, "", "")
+    call <SID>X("pythonFunction", s:purple, "", "")
+    call <SID>X("pythonSelf", s:comment, "", "")
+    call <SID>X("pythonOperator", s:blue, "", "")
+    call <SID>X("pythonExtraOperator", s:blue, "", "")
+    call <SID>X("pythonClass", s:blue, "", "")
+    call <SID>X("pythonDecorator", s:yellow, "", "")
+    call <SID>X("pythonDocstring", s:comment, "", "")
+    call <SID>X("pythonBuiltinObj", s:red, "", "")
+    call <SID>X("pythonBuiltinType", s:orange, "", "")
+    call <SID>X("pythonNumber", s:orange, "", "")
+
 
     " Go Highlighting
     call <SID>X("goStatement", s:purple, "", "")

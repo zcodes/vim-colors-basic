@@ -292,6 +292,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Type", s:blue, "", "")
     call <SID>X("Define", s:purple, "", "none")
     call <SID>X("Include", s:blue, "", "")
+    call <SID>X("Number", s:orange, "", "")
     "call <SID>X("Ignore", "666666", "", "")
 
     " Vim Highlighting
@@ -336,10 +337,19 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Python Highlighting
     call <SID>X("pythonInclude", s:red, "", "")
     call <SID>X("pythonStatement", s:blue, "", "")
-    call <SID>X("pythonConditional", s:blue, "", "")
-    call <SID>X("pythonRepeat", s:blue, "", "")
-    call <SID>X("pythonException", s:red, "", "")
+    call <SID>X("pythonConditional", s:purple, "", "")
+    call <SID>X("pythonRepeat", s:purple, "", "")
+    call <SID>X("pythonException", s:purple, "", "")
     call <SID>X("pythonFunction", s:aqua, "", "")
+    call <SID>X("pythonSelf", s:grey, "", "")
+    call <SID>X("pythonOperator", s:purple, "", "")
+    call <SID>X("pythonExtraOperator", s:purple, "", "")
+    call <SID>X("pythonClass", s:aqua, "", "")
+    call <SID>X("pythonDecorator", s:orange, "", "")
+    call <SID>X("pythonDocstring", s:comment, "", "")
+    call <SID>X("pythonBuiltinObj", s:yellow, "", "")
+    call <SID>X("pythonBuiltinType", s:orange, "", "")
+    call <SID>X("pythonNumber", s:orange, "", "")
 
     " Go Highlighting
     call <SID>X("goStatement", s:purple, "", "")
