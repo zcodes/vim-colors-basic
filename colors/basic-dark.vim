@@ -24,9 +24,10 @@ let s:purple = "ce93d8"
 let s:window = "37474f"
 let s:grey = "b0bec5"
 
-" let s:green = "81c784"
-" let s:aqua = "00b8d4"
-" let s:blue = "64b5f6"
+if !has("gui_running")
+    let s:background = "202020"
+    let s:line = "303030"
+endif
 
 set background=dark
 hi clear
@@ -245,7 +246,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Vim Highlighting
     call <SID>X("Normal", s:foreground, s:background, "")
-    highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+    call <SID>X("LineNr", s:grey, "", "")
     call <SID>X("NonText", s:foreground, "", "")
     call <SID>X("SpecialKey", s:blue, "", "")
     call <SID>X("Search", s:foreground, s:selection, "")
@@ -275,10 +276,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Standard Highlighting
     call <SID>X("Comment", s:comment, "", "")
-    call <SID>X("Todo", s:red, s:background, "underline,bold")
+    call <SID>X("Todo", s:red, s:background, "underline")
     call <SID>X("Title", s:comment, "", "")
     call <SID>X("Cursor", "", s:foreground, "")
-    call <SID>X("Identifier", s:grey, "", "")
+    call <SID>X("Identifier", s:grey, "", "none")
     call <SID>X("Statement", s:yellow, "", "")
     call <SID>X("Conditional", s:foreground, "", "")
     call <SID>X("Repeat", s:yellow, "", "")
@@ -296,7 +297,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X("Ignore", "666666", "", "")
 
     " Vim Highlighting
-    call <SID>X("vimCommand", s:blue, "", "none")
+    call <SID>X("vimCommand", s:blue, "", "")
 
     " C Highlighting
     call <SID>X("cType", s:blue, "", "")
@@ -319,8 +320,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("phpFunctions", s:blue, "", "")
     call <SID>X("phpClass", s:blue, "", "")
     call <SID>X("phpClasses", s:orange, "", "")
-    call <SID>X("phpMagicConstants", s:yellow, "", "bold")
-    call <SID>X("phpMemberSelector", s:grey, "", "bold")
+    call <SID>X("phpMagicConstants", s:yellow, "", "")
+    call <SID>X("phpMemberSelector", s:grey, "", "")
 
     " Ruby Highlighting
     call <SID>X("rubySymbol", s:green, "", "")
@@ -389,7 +390,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Blade Tempalte Highlight
     call <SID>X("bladeDelimiter", s:orange, "", "")
-    call <SID>X("bladeKeyword", s:blue, "", "bold")
+    call <SID>X("bladeKeyword", s:blue, "", "")
 
     " Diff Highlighting
     call <SID>X("diffAdded", s:green, "", "")
