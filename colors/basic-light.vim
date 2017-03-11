@@ -11,7 +11,7 @@
 
 " default gui colors
 let s:foreground = "263238"
-let s:background = "efefef"
+let s:background = "fbfbfb"
 let s:selection = "e3fc8d"
 let s:line = "d5d5d5"
 let s:comment = "7c7c7c"
@@ -269,8 +269,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     end
 
     " Standard Highlighting
-    call <SID>X("Comment", s:comment, "", "italic")
-    call <SID>X("Todo", s:red, s:background, "underline,italic,bold")
+    call <SID>X("Comment", s:comment, "", "none")
+    call <SID>X("Todo", s:red, s:background, "none")
     call <SID>X("Title", s:comment, "", "")
     call <SID>X("Cursor", "", s:foreground, "")
     call <SID>X("Identifier", s:aqua, "", "none")
@@ -282,7 +282,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Constant", s:foreground, "", "")
     call <SID>X("String", s:green, "", "")
     call <SID>X("Special", s:foreground, "", "")
-    call <SID>X("PreProc", s:aqua, "", "italic")
+    call <SID>X("PreProc", s:aqua, "", "")
     call <SID>X("Operator", s:foreground, "", "none")
     call <SID>X("Type", s:blue, "", "none")
     call <SID>X("Define", s:purple, "", "none")
@@ -294,8 +294,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("vimCommand", s:blue, "", "none")
 
     " C Highlighting
-    call <SID>X("cType", s:blue, "", "italic")
-    call <SID>X("cStorageClass", s:blue, "", "italic")
+    call <SID>X("cType", s:blue, "", "")
+    call <SID>X("cStorageClass", s:blue, "", "")
     call <SID>X("cConditional", s:red, "", "")
     call <SID>X("cRepeat", s:red, "", "")
 
@@ -303,8 +303,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("phpVarSelector", s:aqua, "", "")
     call <SID>X("phpKeyword", s:blue, "", "")
     call <SID>X("phpRepeat", s:red, "", "")
-    call <SID>X("phpConditional", s:blue, "", "underline")
-    call <SID>X("phpStatement", s:blue, "", "underline")
+    call <SID>X("phpConditional", s:blue, "", "")
+    call <SID>X("phpStatement", s:blue, "", "")
     call <SID>X("phpMemberSelector", s:foreground, "", "")
 
     " Ruby Highlighting
@@ -365,8 +365,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("htmlScriptTag", s:blue, "", "")
 
     " Diff Highlighting
-    call <SID>X("diffAdded", s:green, "", "")
-    call <SID>X("diffRemoved", s:red, "", "")
+    call <SID>X("diffAdded", "", s:green, "none")
+    call <SID>X("diffRemoved", "", s:red, "none")
+    call <SID>X("diffChanged", "", s:yellow, "none")
+    call <SID>X("DiffAdd", s:window, s:green, "none")
+    call <SID>X("DiffDelete", s:window, s:red, "none")
+    call <SID>X("DiffChange", s:window, s:yellow, "none")
+    call <SID>X("DiffText", s:background, s:yellow, "none")
+
+    call <SID>X("GitGutterAdd", s:green, "", "")
+    call <SID>X("GitGutterDelete", s:red, "", "")
+    call <SID>X("GitGutterChange", s:yellow, "", "")
+    call <SID>X("GitGutterChangeDelete", s:orange, "", "")
 
     " Delete Functions
     delf <SID>X

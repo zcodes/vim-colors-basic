@@ -393,8 +393,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("bladeKeyword", s:blue, "", "")
 
     " Diff Highlighting
-    call <SID>X("diffAdded", s:green, "", "")
-    call <SID>X("diffRemoved", s:red, "", "")
+    call <SID>X("diffAdded", "", s:green, "none")
+    call <SID>X("diffRemoved", "", s:red, "none")
+    call <SID>X("diffChanged", "", s:yellow, "none")
+    call <SID>X("DiffAdd", s:window, s:green, "none")
+    call <SID>X("DiffDelete", s:window, s:red, "none")
+    call <SID>X("DiffChange", s:window, s:yellow, "none")
+    call <SID>X("DiffText", s:background, s:yellow, "none")
+
+    call <SID>X("GitGutterAdd", s:green, "", "")
+    call <SID>X("GitGutterDelete", s:red, "", "")
+    call <SID>X("GitGutterChange", s:yellow, "", "")
+    call <SID>X("GitGutterChangeDelete", s:orange, "", "")
 
     call <SID>X("VimwikiHeader1", s:red, "", "")
     call <SID>X("VimwikiHeader2", s:green, "", "")
