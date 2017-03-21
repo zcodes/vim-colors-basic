@@ -413,6 +413,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("VimwikiHeader5", s:orange, "", "")
     call <SID>X("VimwikiHeader6", s:yellow, "", "")
 
+    " YAML
+    call <SID>X("yamlBlockMappingKey", s:blue, "", "")
+
     " Delete Functions
     delf <SID>X
     delf <SID>rgb
