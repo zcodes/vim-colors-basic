@@ -382,9 +382,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("javaScriptMember", s:orange, "", "")
 
     " HTML Highlighting
-    call <SID>X("htmlTag", s:foreground, "", "")
-    call <SID>X("htmlTagName", s:foreground, "", "")
-    call <SID>X("htmlArg", s:foreground, "", "")
+    call <SID>X("htmlTag", s:blue, "", "")
+    call <SID>X("htmlTagName", s:blue, "", "")
+    call <SID>X("htmlArg", s:aqua, "", "")
     call <SID>X("htmlScriptTag", s:blue, "", "")
 
     " Blade Tempalte Highlight
