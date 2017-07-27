@@ -13,7 +13,7 @@
 let s:foreground = "263238"
 let s:background = "fbfbfb"
 let s:selection = "e3fc8d"
-let s:line = "d5d5d5"
+let s:line = "f5f5f5"
 let s:comment = "7c7c7c"
 let s:red = "d62a28"
 let s:orange = "ff7800"
@@ -23,6 +23,11 @@ let s:aqua = "00897b"
 let s:blue = "3b5bb5"
 let s:purple = "673ab7"
 let s:window = "cfd8dc"
+let s:diff_red = "ff9999"
+let s:diff_green = "99ff99"
+let s:diff_yellow = "ffff99"
+let s:diff_aqua = "9999ff"
+
 
 set background=light
 hi clear
@@ -368,10 +373,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("diffAdded", "", s:green, "none")
     call <SID>X("diffRemoved", "", s:red, "none")
     call <SID>X("diffChanged", "", s:yellow, "none")
-    call <SID>X("DiffAdd", s:window, s:green, "none")
-    call <SID>X("DiffDelete", s:window, s:red, "none")
-    call <SID>X("DiffChange", s:window, s:yellow, "none")
-    call <SID>X("DiffText", s:background, s:yellow, "none")
+    call <SID>X("DiffAdd", "", s:diff_green, "none")
+    call <SID>X("DiffDelete", s:diff_red, s:diff_red, "underline")
+    call <SID>X("DiffChange", "", s:diff_yellow, "none")
+    call <SID>X("DiffText", s:diff_aqua, s:background, "reverse")
 
     call <SID>X("GitGutterAdd", s:green, "", "")
     call <SID>X("GitGutterDelete", s:red, "", "")
