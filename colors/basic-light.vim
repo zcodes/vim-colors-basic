@@ -23,11 +23,11 @@ let s:aqua = "00897b"
 let s:blue = "3b5bb5"
 let s:purple = "673ab7"
 let s:window = "cfd8dc"
-let s:diff_red = "ff9999"
-let s:diff_green = "99ff99"
-let s:diff_yellow = "ffff99"
-let s:diff_aqua = "9999ff"
-let s:lcs = "C7BFBB"
+let s:diff_red = "ffaaaa"
+let s:diff_green = "bbffbb"
+let s:diff_yellow = "ffffaa"
+let s:diff_aqua = "bbeeff"
+let s:lcs = "c7bfbb"
 
 
 set background=light
@@ -376,14 +376,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("diffRemoved", "", s:red, "none")
     call <SID>X("diffChanged", "", s:yellow, "none")
     call <SID>X("DiffAdd", "", s:diff_green, "none")
-    call <SID>X("DiffDelete", s:diff_red, s:diff_red, "underline")
+    call <SID>X("DiffDelete", s:diff_red, s:diff_red, "none")
     call <SID>X("DiffChange", "", s:diff_yellow, "none")
-    call <SID>X("DiffText", s:diff_aqua, s:background, "reverse")
+    call <SID>X("DiffText", "", s:diff_aqua, "none")
 
-    call <SID>X("GitGutterAdd", s:green, "", "")
-    call <SID>X("GitGutterDelete", s:red, "", "")
-    call <SID>X("GitGutterChange", s:yellow, "", "")
-    call <SID>X("GitGutterChangeDelete", s:orange, "", "")
+    call <SID>X("GitGutterAdd", s:green, s:diff_green, "none")
+    call <SID>X("GitGutterDelete", s:red, s:diff_red, "none")
+    call <SID>X("GitGutterChange", s:yellow, s:diff_yellow, "none")
+    call <SID>X("GitGutterChangeDelete", s:yellow, s:diff_yellow, "none")
+    call <SID>X("GitGutterAddLine", "", s:diff_green, "none")
+    call <SID>X("GitGutterDeleteLine", "", s:diff_red, "none")
+    call <SID>X("GitGutterChangeLine", "", s:diff_aqua, "none")
+    call <SID>X("GitGutterChangeDeleteLine", "", s:diff_yellow, "none")
 
     " YAML
     call <SID>X("yamlBlockMappingKey", s:blue, "", "")

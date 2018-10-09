@@ -23,6 +23,10 @@ let s:blue = "6699cc"
 let s:purple = "ce93d8"
 let s:window = "37474f"
 let s:grey = "b0bec5"
+let s:diff_red = "663333"
+let s:diff_green = "336633"
+let s:diff_yellow = "666633"
+let s:diff_aqua = "333366"
 let s:lcs = "425761"
 
 if !has("gui_running")
@@ -398,15 +402,19 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("diffAdded", "", s:green, "none")
     call <SID>X("diffRemoved", "", s:red, "none")
     call <SID>X("diffChanged", "", s:yellow, "none")
-    call <SID>X("DiffAdd", s:green, s:background, "underline")
-    call <SID>X("DiffDelete", s:red, s:red, "underline")
-    call <SID>X("DiffChange", s:yellow, s:background, "underline")
-    call <SID>X("DiffText", s:orange, s:background, "reverse")
+    call <SID>X("DiffAdd", '', s:diff_green, "none")
+    call <SID>X("DiffDelete", s:diff_red, s:diff_red, "none")
+    call <SID>X("DiffChange", '', s:diff_yellow, "none")
+    call <SID>X("DiffText", '', s:diff_aqua, "none")
 
     call <SID>X("GitGutterAdd", s:green, "", "")
     call <SID>X("GitGutterDelete", s:red, "", "")
     call <SID>X("GitGutterChange", s:yellow, "", "")
     call <SID>X("GitGutterChangeDelete", s:orange, "", "")
+    call <SID>X("GitGutterAddLine", "", s:diff_green, "none")
+    call <SID>X("GitGutterDeleteLine", "", s:diff_red, "none")
+    call <SID>X("GitGutterChangeLine", "", s:diff_aqua, "none")
+    call <SID>X("GitGutterChangeDeleteLine", "", s:diff_yellow, "none")
 
     call <SID>X("VimwikiHeader1", s:red, "", "")
     call <SID>X("VimwikiHeader2", s:green, "", "")
