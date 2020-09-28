@@ -1,4 +1,4 @@
-" A simple dark vim colorscheme.
+" basic-eighties -- A simple dark vim colorscheme.
 " Maintainer: zcodes <zcodes@qq.com>
 " Version: 1.0
 "
@@ -9,49 +9,44 @@
 " Most of the colors based on Google Material Design.
 
 " Default GUI colors
-let s:foreground = "cfd8dc"
-let s:background = "263238"
+let s:foreground = "eeeeee"
+let s:background = "2d2d2d"
 let s:selection = "546e7a"
-let s:line = "37474f"
-let s:comment = "78909c"
-let s:red = "ee877d"
+let s:line = "3d3d3d"
+let s:comment = "999999"
+let s:red = "f2777a"
 let s:orange = "ffb74d"
-let s:yellow = "fff176"
-let s:green = "88b888"
-let s:aqua = "00b8d4"
+let s:yellow = "ffcc66"
+let s:green = "99cc99"
+let s:aqua = "66cccc"
 let s:blue = "6699cc"
-let s:purple = "ce93d8"
-let s:window = "37474f"
-let s:grey = "b0bec5"
+let s:purple = "cc99cc"
+let s:window = "444444"
+let s:grey = "d3d0c8"
 let s:diff_red = "663333"
 let s:diff_green = "336633"
 let s:diff_yellow = "666633"
 let s:diff_aqua = "333366"
 let s:lcs = "425761"
 
-if !has("gui_running")
-    let s:background = "202020"
-    let s:line = "303030"
-endif
-
 if exists("g:gitgutter_disable_sign_background") && g:gitgutter_disable_sign_background
-    let s:gitgutter_red = s:background
-    let s:gitgutter_green = s:background
-    let s:gitgutter_yellow = s:background
-    let s:gitgutter_aqua = s:background
+  let s:gitgutter_red = s:background
+  let s:gitgutter_green = s:background
+  let s:gitgutter_yellow = s:background
+  let s:gitgutter_aqua = s:background
 else
-    let s:gitgutter_red = s:diff_red
-    let s:gitgutter_green = s:diff_green
-    let s:gitgutter_yellow = s:diff_yellow
-    let s:gitgutter_aqua = s:diff_aqua
+  let s:gitgutter_red = s:diff_red
+  let s:gitgutter_green = s:diff_green
+  let s:gitgutter_yellow = s:diff_yellow
+  let s:gitgutter_aqua = s:diff_aqua
 endif
 
 set background=dark
 hi clear
 if exists("syntax_on")
-    syntax reset
+  syntax reset
 endif
-let g:colors_name = "basic-dark"
+let g:colors_name = "basic-eighties"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Returns an approximate grey index for the given grey level

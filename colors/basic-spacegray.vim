@@ -1,40 +1,37 @@
-" A simple dark vim colorscheme.
+" basic-spacegray -- A simple gray colorscheme.
 " Maintainer: zcodes <zcodes@qq.com>
 " Version: 1.0
 "
-" The theme file original copyed from Tomorrow theme.
-" See https://github.com/chriskempson/vim-tomorrow-theme.git for it.
+" The colors borrowed from SpaceGray.vim
 " And hex color conversion functions borrowed from the theme "Desert256".
-"
-" Most of the colors based on Google Material Design.
 
 " Default GUI colors
-let s:foreground = "cfd8dc"
-let s:background = "263238"
-let s:selection = "546e7a"
-let s:line = "37474f"
-let s:comment = "78909c"
-let s:red = "ee877d"
-let s:orange = "ffb74d"
-let s:yellow = "fff176"
-let s:green = "88b888"
-let s:aqua = "00b8d4"
-let s:blue = "6699cc"
-let s:purple = "ce93d8"
-let s:window = "37474f"
-let s:grey = "b0bec5"
-let s:diff_red = "663333"
-let s:diff_green = "336633"
-let s:diff_yellow = "666633"
-let s:diff_aqua = "333366"
-let s:lcs = "425761"
+let s:foreground = 'b3b8c4'
+let s:background = '111314'
+let s:selection = '303537'
+let s:line = '171717'
+let s:comment = '515f6a'
+let s:red = 'cc6666'
+let s:orange = 'e5c078'
+let s:yellow = 'ffaf00'
+let s:green = '85b47b'
+let s:aqua = '85a7a5'
+let s:blue = '7d8fa3'
+let s:purple = 'a57a9e'
+let s:window = '4c5966'
+let s:grey = '808080'
+let s:diff_red = '552222'
+let s:diff_green = '225522'
+let s:diff_yellow = '555522'
+let s:diff_aqua = '222255'
+let s:lcs = '3e4853'
 
-if !has("gui_running")
-    let s:background = "202020"
-    let s:line = "303030"
+if !has('gui_running')
+    let s:background = '202020'
+    let s:line = '303030'
 endif
 
-if exists("g:gitgutter_disable_sign_background") && g:gitgutter_disable_sign_background
+if exists('g:gitgutter_disable_sign_background') && g:gitgutter_disable_sign_background
     let s:gitgutter_red = s:background
     let s:gitgutter_green = s:background
     let s:gitgutter_yellow = s:background
@@ -48,10 +45,10 @@ endif
 
 set background=dark
 hi clear
-if exists("syntax_on")
+if exists('syntax_on')
     syntax reset
 endif
-let g:colors_name = "basic-dark"
+let g:colors_name = 'basic-spacegray'
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Returns an approximate grey index for the given grey level
